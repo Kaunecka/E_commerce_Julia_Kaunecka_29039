@@ -1,0 +1,62 @@
+#container {
+	position: relative;
+	margin: auto;
+	width: auto;
+	height: auto;
+	overflow: auto;
+	border: 1px #0000;
+  color: #000000;
+  background-color: cadetblue;
+}
+
+#logo{
+
+  background-color:rgb(160, 226, 206);
+  height: 300px;
+  text-align: center;
+}
+#buttony{
+
+  height:500px;
+  background: rgb(158, 225, 236);
+}
+#cartBtn{
+
+
+}
+.button {
+  background-color: #2ba083;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 109%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    float: left;
+}
+.button:hover {
+  background-color: #3e8e41;
+}
+.buttonlist {
+  background-color: #badfd5;
+    border: none;
+    color: rgb(12, 110, 97);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    float: left;
+
+}
+.buttonlist:hover {
+  background-color: #dee698;
+}
+
+
+

@@ -1,0 +1,66 @@
+<div style="display: flex;flex-direction: row;">
+    <app-menu></app-menu>
+    <div class="content" style="width: 100%;">
+        <div class="content-header">
+            <h2>Products</h2>
+        </div>
+        <button (click)="getProducts()">Odśwież</button>
+        <div class="content-container">
+            <table style="margin: 0 auto;">
+                <thead>
+                    <tr>
+                        <th colspan="5">
+                            <h2>Dodaj nowy produkt</h2>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>link do obrazka</th>
+                        <th>tytuł</th>
+                        <th>cena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" [(ngModel)]="newProduct.thumbnail"></td>
+                        <td><input type="text" [(ngModel)]="newProduct.title"></td>
+                        <td><input type="number" [(ngModel)]="newProduct.price"></td>
+                        <td><select [(ngModel)]="newProduct.category">
+                          <option value="game">game</option>
+                          <option value="tool">tool</option>
+                        </select>
+                        </td>
+                        <td><button (click)="this.mainService.addProduct(newProduct)">Dodaj</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table style="margin:0 auto;" id="productsTable">
+                <thead *ngIf="this.mainService.products">
+                    <tr>
+                        <th>obrazek</th>
+                        <th>dane</th>
+                        <th>akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let product of this.mainService.products?.productsTable">
+                        <tr style="background-color: whitesmoke;">
+                            <td><img src="{{product.thumbnail}}" alt=""></td>
+                            <td>
+                                <ul>
+                                    <li>Tytuł: {{product.title}}</li>
+                                    <li>Cena: {{product.price}}</li>
+                                    <li>Kategoria: {{product.category}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <button (click)="this.mainService.removeProduct(product.id)">Usuń</button>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>

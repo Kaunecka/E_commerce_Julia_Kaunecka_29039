@@ -1,0 +1,31 @@
+<html>
+  <link href="panel-top.component.scss" rel="stylesheet">
+  <div id="container">
+     <div  style="display: flex;flex-direction: row;">
+            <div id="logo">
+              <img src="https://i.pinimg.com/originals/63/09/a4/6309a4ce7dd565a91e73b09f7a7c4838.jpg" routerLink="/landing" alt="">
+              <h2>Sklep z softłerem</h2>
+            </div>
+    </div>
+
+
+    <div id="buttony">
+          <button class="button" routerLink="/adm_dashboard">Panel Administratora</button>
+          <button class="buttonlist">menu</button>
+          <button class="buttonlist">twój profil</button>
+          <button class="buttonlist">twoje zamówienia</button>
+          <button class="buttonlist">regulamin</button>
+          <button class="buttonlist">kontakt</button>
+        <div style="display: flex; justify-content: center;">
+              <input type="text" [(ngModel)]="this.mainService.productsRequest.name">
+              <button class="button" (click)="this.mainService.getProducts(this.mainService.productsRequest)" routerLink="/products">Szukaj Produktu</button>
+        </div>
+    </div>
+          <div>
+              <button id="cartBtn" routerLink="/cart">
+                  {{getCartQuanity()}}
+              </button>
+          </div>
+
+  </div>
+</html>
